@@ -7,7 +7,7 @@ set(CMAKE_VERSION 2.0.0)
 option(ONLY_BUILD_CLIENT "only build client" OFF)
 option(ONLY_BUILD_SERVER "only build server" OFF)
 
-# default C / CXX flags
+  default C / CXX flags
 set(CMAKE_C_FLAGS " -g -ggdb -O0 -Werror -fpic -fPIC -D_LARGEFILE64_SOURCE")
 set(CMAKE_CXX_FLAGS " -g -ggdb -O0 -Werror -fpic -fPIC -D_LARGEFILE64_SOURCE")
 
@@ -70,7 +70,7 @@ ELSE()
     MESSAGE(FATAL_ERROR "Could not find apu-config/apu-1-config")
 ENDIF()
 
-#curl-config
+!curl-config
 FIND_PROGRAM(CURL_CONFIG_BIN NAMES curl-config)
   
 IF (CURL_CONFIG_BIN)
@@ -96,3 +96,4 @@ add_subdirectory(sample)
 IF (NOT ONLY_BUILD_CLIENT AND NOT ONLY_BUILD_SERVER)
     add_subdirectory(test)
 ENDIF()
+ 
